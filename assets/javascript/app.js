@@ -56,13 +56,13 @@ $(document).ready(function(){
 	database.ref().on("child_added", function(childSnapshot){
 
 		console.log(childSnapshot.val());
-
+//debugger;
 		// assign firebase variables to snapshots.
-		var _n = childSnapshot.val().trainName;
-		    _v = childSnapshot.val().trainSpeed
-		var _x = childSnapshot.val().destination;
-		var _t = childSnapshot.val().arrivalTime;
-		var _f = childSnapshot.val().frequency;
+		var _n = childSnapshot.val()._n;
+		var _v = childSnapshot.val()._v;
+		var _x = childSnapshot.val()._x;
+		var _t = childSnapshot.val()._t;
+		var _f = childSnapshot.val()._f;
 		
 		var train_t = moment().diff(moment.unix(_t), "minutes");
 		var delta_t = moment().diff(moment.unix(train_t), "minutes") % _f ;
@@ -71,14 +71,9 @@ $(document).ready(function(){
 
 		var next_t = moment().add(minutesAway, "min").format("hh:mm A"); 
 		
-		// Test for correct times and info
-		console.log(minutesAway);
-		console.log(next_t);
-		console.log(moment().format("hh:mm A"));
-		console.log(next_t);
-		console.log(moment().format("X"));
 
-		// Append train info to table on page
+
+		// Append to virtual table
 		$("#trainTable > tbody").append("<tr><td>" + _n + "</td><td>"+ _v + "</td><td>" + _x + "</td><td>" + _f + " mins" + "</td><td>" + minutesAway + "</td><td>" + next_t + "</td></tr>");
 
 	});
