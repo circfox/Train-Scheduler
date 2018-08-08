@@ -1,0 +1,29 @@
+.jumbotron {
+  margin-top: 20px;
+  background: url("../images/Japan-Railway-West.gif"
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-shadow: 1px 0 0 #ddd, 0 -1px 0 #ddd, 0 1px 0 #ddd, -1px 0 0 #ddd;
+  color: rgb(182, 21, 21);
+  text-emphasis: bold;
+}
+
+h3 {    
+  color: rgb(182, 21, 21);
+  text-emphasis: bold;
+  text-shadow: 1px 0 0 #ddd, 0 -1px 0 #ddd, 0 1px 0 #ddd, -1px 0 0 #ddd;
+}
+
+.panel-title {
+  padding: 10, 0, 10, 10;
+  background: darkgrey;   
+}
+
+body { 
+  color: rgb(182, 21, 21);
+} 
